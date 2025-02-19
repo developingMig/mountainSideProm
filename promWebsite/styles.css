@@ -1,0 +1,169 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Slight yellow background */
+  body {
+    font-family: "Georgia", serif;
+    color: #2c2c2c;
+    background: #ffffe0;
+  }
+  
+  /* Scrolling text common style */
+  .scroll {
+    position: fixed;
+    font-weight: bold;
+    color: #003366;
+    white-space: nowrap;
+    z-index: 1000;
+  }
+  
+  /* Keyframes for horizontal scrolling */
+  @keyframes scroll-horizontal {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  /* Keyframes for vertical scrolling */
+  @keyframes scroll-vertical {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+  }
+  
+  /* Top scrolling text */
+  .scroll-top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    animation: scroll-horizontal 10s linear infinite;
+  }
+  
+  /* Bottom scrolling text */
+  .scroll-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    animation: scroll-horizontal 10s linear infinite reverse;
+  }
+  
+  /* Left scrolling text */
+  .scroll-left {
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Rotate text for vertical scrolling */
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    animation: scroll-vertical 10s linear infinite;
+  }
+  
+  /* Right scrolling text */
+  .scroll-right {
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(90deg);
+    transform-origin: right top;
+    animation: scroll-vertical 10s linear infinite reverse;
+  }
+  
+  /* Main container */
+  .invitation-container {
+    position: relative;
+    max-width: 600px;
+    margin: 5% auto;
+    padding: 2rem;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Decorative corner images */
+  .corner {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+  .corner img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* CSS variables for corner rotation */
+  :root {
+    --rotate-top-left: 90deg;
+    --rotate-top-right: 180deg;
+    --rotate-bottom-left: 0deg;
+    --rotate-bottom-right: -90deg;
+  }
+  
+  .corner-top-left {
+    top: 10px;
+    left: 10px;
+    transform: rotate(var(--rotate-top-left));
+  }
+  .corner-top-right {
+    top: 10px;
+    right: 10px;
+    transform: rotate(var(--rotate-top-right));
+  }
+  .corner-bottom-left {
+    bottom: 10px;
+    left: 10px;
+    transform: rotate(var(--rotate-bottom-left));
+  }
+  .corner-bottom-right {
+    bottom: 10px;
+    right: 10px;
+    transform: rotate(var(--rotate-bottom-right));
+  }
+  
+  /* Titles and text */
+  .invitation-container h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  .invitation-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  .invitation-container p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Call-to-action button */
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #003366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: #002244;
+  }
+  
