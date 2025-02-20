@@ -11,7 +11,15 @@
     color: #2c2c2c;
     background: #ffffe0;
   }
-  
+
+ /* Secret message styling */
+.secret-message {
+  font-size: 0.9rem;
+  color: #003366;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
   /* Scrolling text common style */
   .scroll {
     position: fixed;
