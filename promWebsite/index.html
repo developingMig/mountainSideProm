@@ -43,13 +43,13 @@
     <div id="timer" class="timer"></div>
     
     <!-- Secret message section -->
-    <p class="secret-message">Shhh... the night whispers its secrets. Return on monday, 12 PM.</p>
+    <p class="secret-message">Shhh... the night whispers its secrets.</p>
   </div>
 
   <!-- Timer script -->
   <script>
-    // Set the target date for Monday, February 24, 12:00 PM MST
-    const targetDate = new Date("February 24, 2024 12:00:00 MST");
+    // Set the target date for Monday, February 24, 12:00 PM MST using an ISO 8601 string with UTC offset (-07:00 for MST)
+    const targetDate = new Date("2024-02-24T12:00:00-07:00");
 
     function updateTimer() {
       const now = new Date();
