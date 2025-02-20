@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Scrolling text elements -->
-
   <div class="invitation-container">
     <!-- Decorative vintage corners -->
     <div class="corner corner-top-left">
@@ -46,16 +44,20 @@
     <p class="secret-message">Shhh... the night whispers its secrets.</p>
   </div>
 
-  <!-- Timer script -->
+  <!-- Timer script with debug prints -->
   <script>
     // Set the target date for Monday, February 24, 12:00 PM MST (Arizona local time)
     const targetDate = new Date("2024-02-24T12:00:00-07:00");
+    console.log("Target date:", targetDate);
 
     function updateTimer() {
       const now = new Date();
-      const diff = targetDate - now;
+      console.log("Current time:", now);
 
-      if(diff < 0) {
+      const diff = targetDate - now;
+      console.log("Time difference (ms):", diff);
+
+      if (diff < 0) {
         document.getElementById('timer').textContent = "The event has started!";
         clearInterval(timerInterval);
         return;
@@ -66,12 +68,14 @@
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
 
+      console.log(`Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`);
+
       document.getElementById('timer').textContent = 
         `Countdown to event: ${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
     const timerInterval = setInterval(updateTimer, 1000);
-    updateTimer(); // initial call
+    updateTimer(); // Initial call
   </script>
 </body>
 </html>
