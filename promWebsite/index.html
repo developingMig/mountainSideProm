@@ -32,16 +32,47 @@
       WHATS UP MOUNTAINSIDE RIZZLERS 🤑 
       <br><br>
       This year’s theme will be announced at lunch on
-      <strong>February 25th</strong>. Tickets go on sale in the 26th, 
+      <strong>February 25th</strong>. Tickets go on sale on the 26th, 
       starting at <strong>$50</strong> per person.
       <br><br>
       Ticket sales will conclude on <strong>April 17th</strong>.
     </p>
     <a href="https://www.instagram.com/cliff_rose_studio?igsh=MW0zajJqa3JmZGVobw==" class="cta-button">Location Page</a>
     
+    <!-- Timer section -->
+    <div id="timer" class="timer"></div>
+    
     <!-- Secret message section -->
-    <p class="secret-message">Shhh... the night whispers its secrets. Return to the website on monday, 12 PM.</p>
+    <p class="secret-message">Shhh... the night whispers its secrets. Return on monday, 12 PM.</p>
   </div>
+
+  <!-- Timer script -->
+  <script>
+    // Set the target date for Monday, February 24, 12:00 PM MST
+    const targetDate = new Date("February 24, 2024 12:00:00 MST");
+
+    function updateTimer() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if(diff < 0) {
+        document.getElementById('timer').textContent = "The event has started!";
+        clearInterval(timerInterval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('timer').textContent = 
+        `Countdown to event: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+    updateTimer(); // initial call
+  </script>
 </body>
 </html>
 
